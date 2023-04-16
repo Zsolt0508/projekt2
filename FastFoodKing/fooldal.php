@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,9 +39,9 @@
                 <a class="nav-link" href="etlap.php">Étlap</a>
               </li>
             </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="kosar.php">Kosár<span class="sr-only">(current)</span></a> 
-            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="kosar.php">Kosár</a>
+              </li>
             </li>
           </ul>
       
@@ -55,62 +52,50 @@
         
       </nav>
 
-      <?php
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "projekt";
+      <div class="gallery">
+        <a target="_self" href="etlap.php#ital">
+          <img src="./img/cola.jpg" alt="Cinque Terre" width="600" height="400">
+        </a>
+        <div class="desc" >Italok</div>
+      </div>
+      
+      <div class="gallery">
+        <a target="_self" href="etlap.php#pizza">
+          <img src="./img/pizza.jpeg"  alt="Forest" width="600" height="400">
+        </a>
+        <div class="desc">Pizzák</div>
+      </div>
+      
+      <div class="gallery">
+        <a target="_self" href="etlap.php#hamburger">
+          <img src="./img/hamburger.jpg" alt="Northern Lights" width="600" height="400">
+        </a>
+        <div class="desc">Hamburgerek</div>
+      </div>
+      
+      <div class="gallery">
+        <a target="_self" href="etlap.php#szendvics">
+          <img src="./img/szend.jfif" alt="Mountains" width="600" height="400">
+        </a>
+        <div class="desc">Szendvicsek</div>
+      </div>
 
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+      <div class="gallery">
+        <a target="_self" href="etlap.php#desszert">
+          <img src="./img/desz.jpg" alt="Mountains" width="600" height="400">
+        </a>
+        <div class="desc">Desszertek</div>
+      </div>
 
-// Kapcsolat ellenőrzése
-if ($conn->connect_error) {
-    die("Kapcsolódási hiba: " . $conn->connect_error);
-}
+     
 
-// Lekérdezzük a kosár tartalmát az adatbázisból
-$sql = "SELECT hamburger, pizza, szendvics, deszert, salata, ital FROM kosar WHERE idkosar >= 1";
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-    $row = $result->fetch_assoc();
-
-    // Az árakat összeadjuk
-    $osszeg = 0;
-    $osszeg += $row['hamburger'] * 1000;
-    $osszeg += $row['pizza'] * 1200;
-    $osszeg += $row['szendvics'] * 1200;
-    $osszeg += $row['deszert'] * 1200;
-    $osszeg += $row['salata'] * 1200;
-    $osszeg += $row['ital'] * 1200;
-
-    // Kiírjuk az összeget
-    echo "A kosár összesen: " . $osszeg . " Ft";
-} else {
-    echo "A kosár üres";
-}
-
-if(isset($_POST['submit'])) {
-    // rendelés rögzítése az adatbázisban
-    // ...
-  
-    // üzenet kiírása a felhasználónak
-    echo "Rendelését rögzítettük!";
-  }
-
-
-$conn->close();
-?>
-<form action="kosar.php" method="post" class="widht" >
-  <label for="fizet"  >Válassz fizető eszközt:</label>
-  <select name="fizet" id="fizet" style="width: 100px;">
-    <option value="kártyás">Kártyás</option>
-    <option value="kézpénzes">Kézpénzes</option>
-  </select>
-  <br><br>
-  <input type="submit" value="Rendelés leadása">
-</form>
+      <div class="gallery">
+        <a target="_self" href="etlap.php#saláta">
+          <img src="./img/sal.jpg" alt="Mountains" width="600" height="400">
+        </a>
+        <div class="desc">saláták</div>
+      </div>
 
       <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
       <script src="http://www.parsecdn.com/js/parse-1.4.2.min.js"></script> 

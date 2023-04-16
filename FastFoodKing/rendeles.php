@@ -1,7 +1,7 @@
 <?php
 
 
-include 'index5.php';
+include 'rendeles1.php';
 
 if(isset($_POST['submit'])) {
     $etelid = mysqli_real_escape_string($conn, $_POST['etelid']);

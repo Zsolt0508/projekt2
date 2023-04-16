@@ -27,19 +27,17 @@
           <ul class="navbar-nav mr-auto">
             
             <li class="nav-item ">
-              <a class="nav-link" href="index2.php">Főoldal<span class="sr-only">(current)</span></a> 
+              <a class="nav-link" href="fooldal.php">Főoldal<span class="sr-only">(current)</span></a> 
               
             </li>
         
             
             <li class="nav-item active">
-              <a class="nav-link" href="index5.php">Rólunk</a>
+              <a class="nav-link" href="rendeles1.php">Rendelés</a>
               <li class="nav-item">
-                <a class="nav-link" href="index4.php">Étlap</a>
+                <a class="nav-link" href="etlap.php">Étlap</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="index7.php">Profil</a>
-              </li>
+             
             
               <li class="nav-item">
                 <a class="nav-link" href="kosar.php">Kosár</a>
