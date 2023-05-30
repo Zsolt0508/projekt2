@@ -76,14 +76,26 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
 
-    // Az árakat összeadjuk
+    // Válogatás az elemek közül és összegzés
     $osszeg = 0;
-    $osszeg += $row['hamburger'] * 1000;
-    $osszeg += $row['pizza'] * 1200;
-    $osszeg += $row['szendvics'] * 1200;
-    $osszeg += $row['deszert'] * 1200;
-    $osszeg += $row['salata'] * 1200;
-    $osszeg += $row['ital'] * 1200;
+    if ($row['hamburger'] > 0) {
+        $osszeg += $row['hamburger'] * 1000;
+    }
+    if ($row['pizza'] > 0) {
+        $osszeg += $row['pizza'] * 1200;
+    }
+    if ($row['szendvics'] > 0) {
+        $osszeg += $row['szendvics'] * 1200;
+    }
+    if ($row['deszert'] > 0) {
+        $osszeg += $row['deszert'] * 1200;
+    }
+    if ($row['salata'] > 0) {
+        $osszeg += $row['salata'] * 1200;
+    }
+    if ($row['ital'] > 0) {
+        $osszeg += $row['ital'] * 1200;
+    }
 
     // Kiírjuk az összeget
     echo "A kosár összesen: " . $osszeg . " Ft";
@@ -91,17 +103,11 @@ if ($result->num_rows > 0) {
     echo "A kosár üres";
 }
 
-if(isset($_POST['submit'])) {
-    // rendelés rögzítése az adatbázisban
-    // ...
-  
-    // üzenet kiírása a felhasználónak
-    echo "Rendelését rögzítettük!";
-  }
-
-
 $conn->close();
 ?>
+
+
+
 <form action="kosar.php" method="post" class="widht" >
   <label for="fizet"  >Válassz fizető eszközt:</label>
   <select name="fizet" id="fizet" style="width: 100px;">

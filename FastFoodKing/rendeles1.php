@@ -98,7 +98,7 @@ echo "<table class='table'>";
 echo "<tr><th>hamburger</th><th>pizza</th><th>szendvics</th><th>deszert</th><th>saláta</th><th>italok</th></tr>";
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
-        echo "<tr><td>" . $row["hamburger"]. "</td><td>" . $row["pizza"]. "</td><td>" . $row["szendvics"]. "</td><td>" . $row["deszert"]. "</td><td>" . $row["saláta"]. "</td><td>" . $row["italok"]. "</td></tr>";
+        echo "<tr><td>" . $row["hamburger"]. "</td><td>" . $row["pizza"]. "</td><td>" . $row["szendvics"]. "</td><td>" . $row["deszert"]. "</td><td>" . $row["salata"]. "</td><td>" . $row["ital"]. "</td></tr>";
     }
 } else {
     echo "Nincs találat";
@@ -121,7 +121,7 @@ echo "</form>";
 
 
 
-$conn->close();
+
 ?>
 
 </body>

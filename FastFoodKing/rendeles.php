@@ -12,7 +12,7 @@ if(isset($_POST['submit'])) {
     $salata = mysqli_real_escape_string($conn, $_POST['salata']);
     $ital = mysqli_real_escape_string($conn, $_POST['ital']);
 
-    $sql = "INSERT INTO rendeles (etelid, hamburger, pizza, szendvics, deszert, salata, ital) 
+    $sql = "INSERT INTO kosar (etelid, hamburger, pizza, szendvics, deszert, salata, ital) 
             VALUES ('$etelid', '$hamburger', '$pizza', '$szendvics', '$deszert', '$salata', '$ital')";
 
     if(mysqli_query($conn, $sql)) {
@@ -22,5 +22,5 @@ if(isset($_POST['submit'])) {
     }
 }
 
-
+$conn->close();
 ?>
